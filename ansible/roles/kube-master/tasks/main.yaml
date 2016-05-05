@@ -1,0 +1,17 @@
+---
+- name: install Kubernetes master
+  yum: name=kubernetes-master state=installed
+
+- name: configure Kurnetes API server
+  template: src=apiserver.j2 dest=/etc/kubernetes/apiserver
+  notify:
+    - restart Kubernetes API service
+
+- name: start and enable Kubernetes API server
+  service: name=kube-apiserver state=enabled state=started
+
+- name: common Kubernetes config
+  template: src=config.j2 dest=/etc/kubernetes/config
+  notify:
+    - restart Kubernetes scheduler
+    - restart Kubernetes controller manager

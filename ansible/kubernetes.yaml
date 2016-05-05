@@ -1,0 +1,20 @@
+---
+- hosts: etcd
+  become: yes
+  become_user: root
+  vars:
+    etcd_interface: eth1
+  roles:
+          - etcd
+
+- hosts: kube-masters
+  become: yes
+  become_user: root
+  roles:
+          - kube-master
+
+- hosts: kube-nodes
+  become: yes
+  become_user: root
+  roles:
+          - kube-minion

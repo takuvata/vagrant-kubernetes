@@ -1,0 +1,3 @@
+---
+- name: install Flannel
+  yum: name=flannel state=installed
