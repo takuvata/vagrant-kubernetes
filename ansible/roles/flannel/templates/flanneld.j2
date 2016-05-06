@@ -1,0 +1,20 @@
+{% macro etcd_cluster() -%}
+{% for host in groups[etcd_servers_group] -%}
+   {% if loop.last -%}
+{{ etcd_client_url_scheme }}://{{ hostvars[host]['ansible_' + etcd_client_interface]['ipv4']['address'] }}:{{ etcd_client_port }}
+   {%- else -%}
+{{ etcd_client_url_scheme }}://{{ hostvars[host]['ansible_' + etcd_client_interface]['ipv4']['address'] }}:{{ etcd_client_port }},
+   {%- endif -%}
+{% endfor -%}
+{% endmacro -%}
+# Flanneld configuration options
+
+# etcd url location.  Point this to the server where etcd runs
+FLANNEL_ETCD="{{ etcd_cluster() }}"
+
+# etcd config key.  This is the configuration key that flannel queries
+# For address range assignment
+FLANNEL_ETCD_KEY="{{ flannel_etcd_key }}"
+
+# Any additional options that you want to pass
+FLANNEL_OPTIONS="{{ flannel_options }}"

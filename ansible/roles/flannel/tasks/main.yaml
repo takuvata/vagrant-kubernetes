@@ -1,0 +1,7 @@
+---
+- name: install Flannel
+  yum: name=flannel state=installed
+
+- name: configure Flannel daemon
+  template: src=flanneld.j2 dest=/etc/sysconfig/flanneld
+  notify: restart Flannel daemon

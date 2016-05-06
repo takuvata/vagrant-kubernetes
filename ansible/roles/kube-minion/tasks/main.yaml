@@ -1,3 +1,0 @@
----
-- name: Install Kubernetes minion
-  yum: name=kubernetes-node state=present

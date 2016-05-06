@@ -5,16 +5,19 @@
   vars:
     etcd_interface: eth1
   roles:
-          - etcd
+    - etcd
 
 - hosts: kube-masters
   become: yes
   become_user: root
   roles:
-          - kube-master
+    - flannel
+    - kube-master
 
 - hosts: kube-nodes
   become: yes
   become_user: root
   roles:
-          - kube-minion
+    - docker
+    - flannel
+    - kube-node

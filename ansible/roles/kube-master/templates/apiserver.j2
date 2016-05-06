@@ -17,16 +17,16 @@
 KUBE_API_ADDRESS="{{ kube_api_address }}"
 
 # The port on the local server to listen on.
-# KUBE_API_PORT="--port=8080"
+KUBE_API_PORT="--port={{ kube_api_port }}"
 
 # Port minions listen on
-# KUBELET_PORT="--kubelet-port=10250"
+KUBELET_PORT="--kubelet-port={{ kubelet_port }}"
 
 # Comma separated list of nodes in the etcd cluster
 KUBE_ETCD_SERVERS="--etcd-servers={{ etcd_cluster() }}"
 
 # Address range to use for services
-KUBE_SERVICE_ADDRESSES="{{ kube_service_addresses }}"
+KUBE_SERVICE_ADDRESSES="--service-cluster-ip-range={{ kube_service_addresses }}"
 
 # default admission control policies
-KUBE_ADMISSION_CONTROL="{{ kube_admission_controll }}"
+KUBE_ADMISSION_CONTROL="--admission-control={{ kube_admission_controll }}"

@@ -1,5 +1,5 @@
 ---
-- name: restart Kubernetes API server
+- name: restart Kubernetes API
   service: name=kube-apiserver state=restarted enabled=yes
 
 - name: restart Kubernetes controller manager
