@@ -1,5 +1,14 @@
 ---
-flannel_etcd_key: "/kubernetes/network"
+flannel_etcd_key: "/kubernetes/network/config"
+flannel_config: '{
+  "Network": "10.20.0.0/16",
+  "SubnetLen": 24,
+  "Backend": {
+    "Type": "vxlan",
+    "VNI": 1
+  }  
+}'
+
 flannel_options: ""
 
 etcd_servers_group: "etcd"
