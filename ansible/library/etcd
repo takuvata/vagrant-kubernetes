@@ -112,6 +112,8 @@ def main():
 
     key = module.params['key']
     value = module.params['value']
+    if isinstance(value, dict):
+       value = json.dumps(value)
 
     if state == 'present' and not value:
         module.fail_json(msg='Value is required with state="present".')

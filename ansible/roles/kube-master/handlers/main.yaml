@@ -1,9 +1,9 @@
 ---
 - name: restart Kubernetes API
-  service: name=kube-apiserver state=restarted enabled=yes
+  service: name=kube-apiserver state=restarted
 
 - name: restart Kubernetes controller manager
-  service: name=kube-controller-manager state=restarted enabled=yes
+  service: name=kube-controller-manager state=restarted
 
 - name: restart Kubernetes scheduler
-  service: name=kube-scheduler state=restarted enabled=yes
+  service: name=kube-scheduler state=restarted

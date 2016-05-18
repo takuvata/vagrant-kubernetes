@@ -11,7 +11,7 @@ KUBELET_PORT="--port={{ kubelet_port }}"
 KUBELET_HOSTNAME="--hostname-override={{ kubelet_hostname }}"
 
 # location of the api-server
-KUBELET_API_SERVER="--api-servers={{ kube_api_schema }}://{{ hostvars[groups[kube_masters_group][0]]['ansible_' + kube_api_server_interface]['ipv4']['address'] }}:{{ kube_api_port }}""
+KUBELET_API_SERVER="--api-servers={{ kube_api_schema }}://{{ hostvars[groups[kube_masters_group][0]]['ansible_' + kube_api_server_interface]['ipv4']['address'] }}:{{ kube_api_port }}"
 
 # pod infrastructure container
 KUBELET_POD_INFRA_CONTAINER="--pod-infra-container-image={{ kubelet_pod_infra_container }}"

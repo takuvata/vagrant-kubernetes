@@ -1,5 +1,6 @@
 ---
-flannel_etcd_key: "/kubernetes/network/config"
+flannel_etcd_path: "/kubernetes/network"
+
 flannel_config: '{
   "Network": "10.20.0.0/16",
   "SubnetLen": 24,

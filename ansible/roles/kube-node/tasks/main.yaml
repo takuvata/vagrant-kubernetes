@@ -11,3 +11,9 @@
   template: src=config.j2 dest=/etc/kubernetes/config
   notify:
     - restart Kubernetes proxy
+
+- name: start kubelet
+  service: name=kubelet state=started enabled=yes
+
+- name: start Kubernetes proxy
+  service: name=kube-proxy state=started enabled=yes
