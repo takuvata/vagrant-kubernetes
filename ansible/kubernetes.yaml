@@ -17,6 +17,9 @@
 - hosts: kube-nodes
   become: yes
   become_user: root
+  vars:
+    docker_insecure_registry:
+      - 192.168.121.152:5000
   roles:
     - flannel
     - docker
