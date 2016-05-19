@@ -1,6 +1,6 @@
-node1 ansible_ssh_host=10.123.1.21 ansible_ssh_user=vagrant ansible_ssh_private_key_file=/home/vagrant/sync/.vagrant/machines/node1/libvirt/private_key
-node2 ansible_ssh_host=10.123.1.22 ansible_ssh_user=vagrant ansible_ssh_private_key_file=/home/vagrant/sync/.vagrant/machines/node2/libvirt/private_key
-node3 ansible_ssh_host=10.123.1.23 ansible_ssh_user=vagrant ansible_ssh_private_key_file=/home/vagrant/sync/.vagrant/machines/node3/libvirt/private_key
+node1 ansible_ssh_host=10.123.1.21 ansible_ssh_user=vagrant ansible_ssh_private_key_file=/home/vagrant/sync/.vagrant/machines/node1/virtualbox/private_key
+node2 ansible_ssh_host=10.123.1.22 ansible_ssh_user=vagrant ansible_ssh_private_key_file=/home/vagrant/sync/.vagrant/machines/node2/virtualbox/private_key
+node3 ansible_ssh_host=10.123.1.23 ansible_ssh_user=vagrant ansible_ssh_private_key_file=/home/vagrant/sync/.vagrant/machines/node3/virtualbox/private_key
 
 [etcd]
 node[1:3]
