@@ -1,0 +1,8 @@
+---
+docker_options: --selinux-enabled
+docker_cert_path: /etc/docker
+docker_add_registry: null
+docker_block_registry: null
+docker_insecure_registry: null
+docker_tmpdir: /var/tmp
+docker_logrotate: true

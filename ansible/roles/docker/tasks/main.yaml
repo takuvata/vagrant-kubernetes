@@ -1,6 +1,11 @@
 ---
-- name: install docker
+- name: install Docker
   yum: name=docker state=installed
 
-- name: start docker
+- name: configure Docker engine
+  template: src=docker.j2 dest=/etc/sysconfig/docker
+  notify:
+    - restart Docker
+
+- name: start Docker
   service: name=docker state=started enabled=yes
