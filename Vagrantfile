@@ -5,9 +5,7 @@ Vagrant.configure("2") do |config|
   hosts = {
     'node1' => '10.123.1.21',
     'node2' => '10.123.1.22',
-    'node3' => '10.123.1.23',
-    'node4' => '10.123.1.24',
-    'node5' => '10.123.1.25'
+    'node3' => '10.123.1.23'
   }
 
   packages = ["https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"]
