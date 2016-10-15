@@ -19,7 +19,7 @@
   etcd: host="{{ hostvars[groups[etcd_servers_group][0]]['ansible_' + etcd_client_interface]['ipv4']['address'] }}"
         port="{{ etcd_client_port }}"
         key="{{ flannel_etcd_path }}/config"
-        value="{{ flannel_config }}"
+        value="{{ flannel_config | string }}"
         state=present
 
 - name: start Flannel daemon
